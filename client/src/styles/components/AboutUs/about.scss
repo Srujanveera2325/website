@@ -1,0 +1,158 @@
+// client/src/styles/components/AboutUs/about.scss
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+// Color Variables (Use your chosen palette)
+$primary-color: #005f73; // Deep Teal
+$secondary-color: #ee9b00; // Vibrant Gold
+$accent-color: #f8f9fa;
+$text-color: #343a40;
+$text-color-light: #495057;
+$white: #fff;
+
+.about-section {
+  margin-bottom: 3rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid #e9ecef;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: $primary-color;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 3px solid $secondary-color;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: $text-color;
+    margin-bottom: 1rem;
+  }
+}
+
+// Mission Section Specific Styles
+.mission-section {
+    background-color: $accent-color; // Keep light background
+    padding: 3rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    // Add a subtle pattern (optional)
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%23005f73' fill-opacity='0.1'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 9.8-9.8v1.4zM10 2l9.8 9.8v1.4L10 2.2V2z'/%3E%3C/g%3E%3C/g>%3E%3C/svg%3E");
+    h2{
+        text-align: center;
+        display: block; //For occupies all the width available
+    }
+}
+
+
+// Team Section Styles
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem; // Space between team members
+
+  .team-member {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px) scale(1.03); // Subtle lift and scale
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-member-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; // Circular images
+      object-fit: cover;  // Ensure images cover the area
+      margin-bottom: 1rem;
+      border: 3px solid $secondary-color; // Gold border
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+      font-style: italic;
+      color: $text-color-light;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+// Values Section Styles
+.values-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive columns
+    gap: 30px; // Increased gap for better spacing
+
+    li {
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 25px; // Increased padding for better spacing
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;        // Use flexbox for layout
+        align-items: flex-start; // Align items to the top
+
+        &:hover {
+        transform: translateY(-5px);  // Subtle lift on hover
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);  // Increased shadow on hover
+        }
+        svg {
+        color: $secondary-color;
+        font-size: 1.5rem;     //  icon size
+        margin-right: 1rem;  // Space between icon and text
+        flex-shrink: 0;        // Prevent icon from shrinking
+        width: 1em;
+        height: 1em;
+        }
+        .value-title {
+            font-weight: 600;
+            color: $primary-color; // Use primary color
+            margin-bottom: 0.5rem; // Space between title and description
+            display: block;       // Make title a block element
+        }
+        p{
+            margin-top: 0;     // Remove top margin
+            color: $text-color;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .about-section {
+    padding: 1.5rem 0; // Reduce padding on smaller screens
+  }
+
+    .mission-section{
+        padding: 2rem 1rem;
+    }
+
+  .team-members {
+    grid-template-columns: 1fr; // Single column on small screens
+  }
+  .values-list{
+     grid-template-columns: 1fr;
+  }
+}

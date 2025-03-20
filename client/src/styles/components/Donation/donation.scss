@@ -1,0 +1,353 @@
+// client/src/styles/components/Donation/donation.scss
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+// --- Color Variables ---
+$primary-color: #005f73; // Deep Teal
+$secondary-color: #ee9b00; // Vibrant Gold
+$accent-color: #f8f9fa;   // Very Light Gray (off-white)
+$text-color: #343a40;
+$text-color-light: #495057;
+$white: #fff;
+$error-color: #dc3545;
+$border-color: #ddd;
+
+// --- Mixins ---
+@mixin box-shadow-default {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @mixin box-shadow-hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  @mixin transition-smooth {
+    transition: all 0.3s ease;
+  }
+.donate-hero 
+{
+   
+  // background-color: $primary-color;  // Use your primary color
+  color: $primary-color;   // Use the primary color for text for contrast
+  text-align: center;
+  padding: 40px 20px; //  less padding on top/bottom
+  border-radius: 0;   //remove the borders
+  box-shadow: none;   // Remove any shadows
+  margin-bottom: 0;       //remove the margin
+
+    h1 {
+      
+    font-size: 3rem;   // Keep the heading large
+    margin-bottom: 0.8rem; //
+    font-weight: 700;
+    // Removed text shadow, was unnecessary.
+    color: $primary-color;// added heading color.
+
+    }
+
+    p 
+    {
+      font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    color: $text-color; // Use a slightly darker gray for the subheading
+    }
+    .hero-donate-button {
+        background-color: $secondary-color; // Gold button
+        color: $primary-color;   // Text color
+        border: none;
+        padding: 15px 35px;     //  padding
+        font-size: 1.3rem;     //  font
+        font-weight: 600;
+        border-radius: 50px;  // Fully rounded
+        cursor: pointer;
+        @include transition-smooth; // Re-use mixin.
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+        &:hover {
+          background-color: darken($secondary-color, 10%); // Darken on hover
+          transform: translateY(-3px);        //  lift
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); //  shadow
+        }
+
+        &:active {  // "Pressed" state
+          transform: translateY(1px);     //  down slightly on press
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);     // Reduce shadow
+        }
+      }
+}
+
+
+// Main Donation Content Section
+.donation-content {
+    display: flex;         // Make this a flex container
+    flex-wrap: wrap;       // Allow wrapping on smaller screens
+    gap: 40px;              // Add more space between
+    padding: 40px 0;     // consistent padding
+
+  .donation-form-container {
+    // flex: 1 1 450px;    // REMOVED:  Let it grow, but with min-width
+    // max-width: 600px;   // REMOVED:  Let the content define the width, up to a max
+    width: 100%;       // NEW: Take up all available width *within* the flex container.
+    background-color: $white;
+    border-radius: 15px;    //  rounded corners
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    padding: 40px;        // padding inside the form
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  // transitions
+    box-sizing: border-box;
+
+
+    &:hover {               // Add hover effects for a more interactive feel
+        transform: translateY(-7px);  //
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);  //  shadow
+    }
+     h2 {                  //  form heading styles
+        font-size: 2rem;         // Larger heading size
+        color: $primary-color;   //  color for heading
+        margin-top: 0;          // Remove default top margin
+        margin-bottom: 2rem;     // More space below heading
+        text-align: center;       // Center the heading
+        border-bottom: 3px solid $secondary-color; // Gold underline
+        padding-bottom: 0.75rem;  //  space below underline
+        display: inline-block;  // Needed for underline to work correctly
+    }
+
+    //Preset form removed from previous versions.
+
+        // Form specific
+    form{
+
+        .error-message { // Styling errors
+            color: $error-color;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            text-align: left; // Align error messages
+            display: block;    // Ensure error messages take up the full width below the input.
+        }
+        label {  // Consistent label styles
+          margin-bottom: 0.6rem;
+          display: block;
+          font-weight: 500;
+          color: $text-color;
+        }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            input[type="tel"],
+            textarea {
+            width: 100%;         //  full width within the form container
+            padding: 14px;        //  padding for readability
+            border: 1px solid $border-color;
+            border-radius: 8px;  //  rounded corners
+            box-sizing: border-box;  //  padding and border in the width
+            font-size: 1.1rem;   // slightly larger font
+            margin-bottom: 1.5rem;// More space
+            @include transition-smooth; //  transitions
+
+            &:focus { // focus styles.
+                outline: none;  // Remove default
+                border-color: $secondary-color;    // Gold
+                box-shadow: 0 0 0 3px rgba($secondary-color, 0.3);  //focus ring
+                transform: scale(1.02);   // Subtle
+            }
+        }
+            //Consistent with input fields
+        textarea {
+            resize: vertical; // Allow vertical resizing
+            min-height: 120px;  // Provide enough space
+        }
+
+        button[type="submit"] {
+        background-color: $secondary-color; //  color
+        color: $primary-color;    // color
+        border: none; // Remove
+        padding: 15px 30px;          //  padding
+        font-size: 1.25rem;       // font size
+        font-weight: 600;     // Make the font bolder
+        border-radius: 30px; // Fully rounded
+        cursor: pointer;
+        @include transition-smooth; // Use transition for smooth effect
+        width: 100%;                 //  width
+        margin-top: 1rem;            //space
+
+        &:hover {                  // Hover
+            background-color: darken($secondary-color, 10%);
+            transform: translateY(-3px) scale(1.02); //
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);     //  shadow
+        }
+        &:active {
+          transform: translateY(1px);     //  down
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);     // Reduce
+        }
+        &:disabled {                //  style for disabled state
+              background-color: #ccc;
+              cursor: not-allowed;
+              transform: none;        //  transform on disabled state
+              box-shadow: none;      // No shadow on disabled state
+
+            .spinner {
+                display: none; //
+            }
+        }
+         .spinner {             // Spinner for loading state (within the button)
+                border: 4px solid rgba(255, 255, 255, 0.3);  // Light grey border
+                border-top: 4px solid #fff;                // White top border (creates the spin)
+                border-radius: 50%;                        // Makes it a circle
+                width: 1em;
+                height: 1em;
+                animation: spin 1s linear infinite;         // Apply the spin animation
+                display: inline-block;                     // Show it next to the "Submitting..." text
+                vertical-align: middle;                      // Center vertically
+                margin-right: 0.5em;
+            }
+
+            @keyframes spin {  // Define the spin animation
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        }
+            .success-message{
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+                padding: 15px;
+                border-radius: 8px;
+                margin-top: 10px;
+                margin-bottom: 15px; // Add margin-bottom
+                text-align: center;
+            }
+        }
+  }
+
+   .donation-methods {
+        flex: 1 1 350px; // Flexible sizing for methods.  Adjust as needed
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+
+    .bank-details,
+    .qr-code-section,
+    .donation-impact { // Apply to all sections.
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); //  shadow
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      }
+        h2,h3 {
+            font-size: 1.7rem; // Consistent with form heading.
+            margin-top: 0;
+            color: $primary-color;  //  color
+            border-bottom: 3px solid $secondary-color;  // Gold underline
+            padding-bottom: 0.6rem;   // Space below underline
+            display: inline-block;   // For the underline effect
+        }
+         h3{
+             font-size: 1.4rem; //
+          }
+
+    }
+        .bank-details {
+
+            .bank-details-content{
+                p {
+                margin-bottom: 0.6rem; // Slightly more space
+                line-height: 1.5;      // Comfortable line-height
+
+                    strong {
+                        display: inline-block; //
+                        margin-bottom: 0.25em;
+                        min-width: 120px; // Consistent label
+                        color: $text-color-light;    // Muted
+                    }
+                }
+            }
+    }
+
+
+    .qr-code-section {
+      text-align: center; // Center the QR code and note
+      .qr-code {
+        max-width: 220px;   //  larger QR code
+        height: auto;
+        margin-bottom: 12px;   // Space below QR code
+        display: block;       // For centering
+        margin: 0 auto;  // Center
+        border: 3px solid $secondary-color; // Gold border
+        border-radius: 8px; //  rounded corners
+      }
+
+      .qr-code-note {
+        font-size: 1rem;    //  larger font
+        color: $text-color-light;     // Muted text color
+        margin-top: 10px;          //  space above note
+      }
+    }
+     .donation-impact { // styles of donation-impact
+      h3 {
+          font-size: 1.3rem; // Slightly larger font size
+          color: $primary-color;
+          margin-top: 0;
+          margin-bottom: 1rem;
+          border-bottom: 2px solid;
+          padding-bottom: 0.5rem;
+          display: inline-block;
+      }
+
+      ul {
+          list-style: none; // Remove bullets
+          padding: 0;
+          margin: 0;
+            li {
+              margin-bottom: 1rem;        // More space
+              padding-left: 2rem;      //  space
+              position: relative;        // positioning
+              line-height: 1.5;        //readability
+
+              &::before {
+                content: '✓';        // Checkmark symbol
+                color: $secondary-color;   // Gold checkmark
+                position: absolute;       // positioning
+                left: 0;                // the left
+                top: 0.1em;            // vertical alignment
+                font-size: 1.5rem;        // checkmark
+                font-weight: bold;
+            }
+            strong{
+                font-weight: 600;      // bold weight for numbers
+            }
+        }
+        }
+     }
+
+  }
+
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+         .donation-content {
+              flex-direction: column;
+            .donation-methods {
+
+
+                .bank-details,
+                .qr-code-section,
+                .donation-impact {
+                margin-bottom: 20px; // Space between sections on mobile
+                }
+            }
+
+            .donation-form-container,
+            .donation-methods {
+                width: 100%; // Full width on small screens
+                max-width: none; // Remove max-width
+            }
+        }
+    }
+}

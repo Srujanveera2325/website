@@ -1,0 +1,29 @@
+// client/src/components/Gallery/gallery.scss
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden; // Ensure image doesn't overflow
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional: Add a subtle shadow
+    transition: transform 0.3s ease; // Optional: Add a hover effect
+
+    &:hover {
+        transform: scale(1.05); // Slightly enlarge on hover
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        display: block; // Removes any extra space below the image
+    }
+}
+// ... other styles
+@media (max-width: 767px) {
+    .gallery-container{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}

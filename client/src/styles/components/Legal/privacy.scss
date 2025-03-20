@@ -1,0 +1,54 @@
+// Example: client/src/styles/components/Legal/privacy.scss
+.legal-section {
+    margin-bottom: 40px; // More space between sections
+    padding: 30px;      // More padding
+    border: 1px solid #ddd;
+    border-radius: 10px; // More rounded corners
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); //  shadow
+  
+    h2 {
+      font-size: 1.8rem;      // Larger heading
+      color: #005f73;       //  primary color
+      margin-top: 0;
+      margin-bottom: 1.5rem; // More space below heading
+      border-bottom: 3px solid #ee9b00; //  secondary color underline
+      padding-bottom: 0.6rem;   // Space below underline
+      display: inline-block;     // For underline to work correctly
+    }
+  
+    h3 { // Style for subheadings (if you use them)
+      font-size: 1.3rem;
+      color: #343a40;
+      margin-top: 1.5rem;    // Space above subheading
+      margin-bottom: 0.5rem; // Space below subheading
+    }
+  
+    ol, ul {
+      padding-left: 25px;    // Increased indent
+      margin-bottom: 1.5rem;  // More space below lists
+  
+      li {
+        margin-bottom: 1rem; // More space between list items
+        line-height: 1.6;   // Increased line height for readability
+  
+        strong {
+          display: block; // Make strong tag take up the full line width.
+          margin-bottom: .25em;
+          font-size: 1.1rem;
+        }
+          p {
+              margin-bottom: 0; // Remove default bottom margin from paragraphs *inside* list items
+          }
+      }
+    }
+  
+    a { // Style for links (if you have any)
+      color: #007bff;       // Your link color
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

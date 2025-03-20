@@ -1,0 +1,33 @@
+// client/src/styles/components/Legal/terms.scss
+.legal-section {  // Class applied to each section in LegalPage.jsx
+    margin-bottom: 30px; // Space between sections
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+
+    h2 {
+        color: #005f73; // Use your primary color
+        margin-top: 0;   // Remove default top margin
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #005f73; // Underline
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+  ol, ul { // Style both ordered and unordered lists
+    padding-left: 20px; // Indent list items
+    margin-bottom: 1rem;
+
+    li {
+      margin-bottom: 0.5rem; // Space between list items
+      line-height: 1.5;
+
+        strong {
+          display: block; // Make the strong tag take up the full line width.
+          margin-bottom: .25em
+        }
+    }
+  }
+}
+

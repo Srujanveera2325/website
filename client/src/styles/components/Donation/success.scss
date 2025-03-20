@@ -1,0 +1,164 @@
+// client/src/styles/components/Donation/success.scss
+
+// --- Color Variables (Consistent with donation.scss) ---
+$primary-color: #005f73; // Deep Teal
+$secondary-color: #ee9b00; // Vibrant Gold
+$accent-color: #f8f9fa;
+$text-color: #343a40;
+$text-color-light: #495057;
+$white: #fff;
+$error-color: #dc3545;
+$border-color: #ddd;
+
+.donation-success {
+    padding: 40px 0;  // Add some vertical padding
+
+  h1 {
+    font-size: 2.5rem;       // Large, welcoming heading
+    color: $primary-color;
+    text-align: center;
+    margin-bottom: 1rem;     // Space below heading
+  }
+
+  .success-message {
+    font-size: 1.2rem;      //  subheading size
+    color: $text-color;
+    text-align: center;    // Center the message
+    margin-bottom: 30px;   // Space below message
+    line-height: 1.6;        // Comfortable line height
+  }
+
+    //Added confirmation details, styling.
+  .confirmation-details {
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 25px;          // Generous padding
+    margin-bottom: 30px;    // Space before next section
+
+    h2 {  //Heading style
+      font-size: 1.6rem;
+      color: $primary-color;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      text-align: center;      //Center
+      border-bottom: 2px solid $secondary-color;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    p {
+      margin-bottom: 0.5em;     // Space between lines
+      line-height: 1.5;       // Comfortable line-height
+        strong {
+          min-width: 80px; //
+          display: inline-block; //Allows to align
+          margin-bottom: 0.5em;
+        }
+    }
+  }
+    .donation-methods {
+
+        .bank-details,
+        .qr-code-section,
+        .donation-impact {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        padding: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h2, h3 { // Style headings consistently
+                font-size: 1.5rem;
+                margin-top: 0;
+                color: #005f73;
+                border-bottom: 3px solid #ee9b00;
+                padding-bottom: 0.5rem;
+                display: inline-block;
+            }
+            h3{
+                font-size: 1.3rem; // Adjust as needed.
+            }
+
+        }
+        .bank-details {
+            .bank-details-content{ // Style for bank details
+                    p {
+                    margin-bottom: 0.5em;
+                    line-height: 1.4; // Improve readability
+
+                    strong {
+                        display: inline-block;
+                        margin-bottom: 0.25em;
+                        min-width: 120px; // Consistent width for labels
+                    }
+                    }
+                }
+        }
+
+
+        .qr-code-section {
+        text-align: center;    // Center QR code and note
+
+        .qr-code {
+            max-width: 220px;   // Slightly larger QR code
+            height: auto;
+            margin-bottom: 12px;  // Space below QR code
+            display: block;        // For centering
+            margin: 0 auto; // Center horizontally
+            border: 3px solid $secondary-color; // Gold border
+            border-radius: 8px;
+        }
+
+        .qr-code-note {
+            font-size: 0.95rem;       // Slightly larger font
+            color: $text-color-light;    // Muted text color
+            margin-top: 8px;         // Space above note
+        }
+        }
+        .donation-impact{
+                h3 {
+                    font-size: 1.3rem;
+                    color: #2c3e50;
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                    border-bottom: 2px solid #2c3e50;
+                    padding-bottom: 0.5rem;
+                    display: inline-block;
+
+                }
+                ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li {
+                    margin-bottom: 1rem; // More space between items
+                    padding-left: 2rem;  // Increased padding for checkmark
+                    position: relative;
+                    line-height: 1.5;
+
+                    &::before {
+                        content: '✓';
+                        color: $secondary-color;
+                        position: absolute;
+                        left: 0;
+                        top: 0.1em; // Adjust for vertical alignment
+                        font-size: 1.5rem; // Larger checkmark
+                        font-weight: bold;
+                    }
+                    strong{
+                        font-weight: 600;
+                    }
+                }
+            }
+    }
+        @media (max-width: 768px){
+            flex-direction: column;
+        }
+
+    }
+}

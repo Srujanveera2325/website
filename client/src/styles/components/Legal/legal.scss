@@ -1,0 +1,38 @@
+// client/src/styles/components/Legal/legal.scss
+// Define your color variables (consistent with the rest of your site)
+$primary-color: #005f73; // Deep Teal
+$secondary-color: #ee9b00; // Vibrant Gold
+$accent-color: #f8f9fa; // Very Light Gray
+$text-color: #343a40;
+$text-color-light: #495057;
+$white: #fff;
+
+.legal-section {
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px; // Space between sections
+
+  h2 {
+    font-size: 1.8rem;         //  heading size
+    color: $primary-color;
+    border-bottom: 2px solid $secondary-color;  // gold underline
+    padding-bottom: 0.5rem;
+    display: inline-block;    // For underline to work correctly
+    margin-top: 0;
+    margin-bottom: 1.5rem;   //  space below heading
+  }
+
+  p {
+    line-height: 1.6;       //  line spacing for readability
+    color: $text-color;
+
+    strong {                // Style for bold subheadings
+      display: block;         // Each subheading on its own line
+      margin-bottom: 0.5rem; // Space below subheading
+      color: $primary-color;     //  color
+      font-weight: 600;        // Bolder
+    }
+  }
+}

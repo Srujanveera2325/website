@@ -1,0 +1,87 @@
+// client/src/styles/components/Testimonials/testimonials.scss
+
+.testimonials-section {  // This class is no longer directly used on the page, BUT
+    // we can keep it to style the individual testimonial items
+    // *within* the carousel.
+
+padding: 40px 0;     // Keep the padding, but we'll apply it to a container
+background-color: #f8f9fa;
+
+h2 {
+text-align: center;
+margin-bottom: 30px;
+}
+}
+
+.testimonials-grid {
+// Removed display grid, no loger necessary
+// Removed grid-template-columns, no longer necessary.
+gap: 20px; // This is now applied to the SLIDER ITSELF (below).
+}
+
+.testimonial-item { // Styles for each individual testimonial *item*
+background-color: #fff;
+border-radius: 10px;       //  rounded corners
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); //  shadow
+padding: 30px;             //  padding
+text-align: center;         // Center-align content
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+margin: 0 15px;       // Add this line
+
+&:hover {                 //  hover effect
+transform: translateY(-5px);
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-type {       // Style for the type of testimonial
+font-weight: 600;        // Bolder
+color: #007bff;          // A blue color (or choose your own)
+margin-bottom: 10px;      // More space below
+text-transform: uppercase; // Make it uppercase
+font-size: 0.9rem;     // Slightly smaller font size
+letter-spacing: 1px;   // Add some letter spacing
+}
+
+.testimonial-text {      // Style for the testimonial text
+font-style: italic;
+color: #495057;          //  muted text color
+margin-bottom: 15px;      //  space
+line-height: 1.6;      // Improve readability
+font-size: 1.1rem;     // Slightly larger font
+&::before {                // Add an opening quote
+content: "“";        // The fancy open quote
+font-size: 2rem;    // Larger quote
+color: #007bff;
+font-family: Georgia, serif; // Or another suitable font
+vertical-align: -0.4em; // Adjust vertical positioning
+margin-right: 0.2em;     // Space between quote and text
+}
+
+&::after {                 // Add a closing quote
+content: "”";
+font-size: 2rem;
+color: #007bff;
+font-family: Georgia, serif;
+vertical-align: -0.1em; //
+}
+}
+
+.testimonial-author {   // Style for the author/role
+margin-top: 15px;
+color: #343a40;          // Dark gray color
+font-size: 1rem;      // Adjust font size
+font-weight: 500;       // Use a medium font weight
+}
+}
+
+//Styles for slick-carousel
+
+.slick-slider{ //This applies to react-slick container.
+width: 90%; // Use percentages instead of pixels.
+max-width: 800px; // And set the max-width
+margin: 0 auto;  //Center
+}
+.slick-dots li button:before { //Style to the dots in slick.
+color: #005f73;
+font-size: 12px;
+}

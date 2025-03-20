@@ -1,0 +1,68 @@
+
+// client/src/styles/components/_forms.scss
+
+form {
+  div {
+    margin-bottom: 15px; // Space between form elements
+  }
+
+  label {
+    display: block; // Labels on their own line
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; // Include padding and border in the element's total width and height
+    font-size: 1rem;
+
+    &:focus {
+      outline: none; // Remove default focus outline
+      border-color: #007bff; // Highlight on focus
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); // Add a subtle focus ring
+    }
+  }
+
+  textarea {
+    resize: vertical; // Allow vertical resizing only
+    min-height: 100px;
+  }
+   input[type="file"] {
+       width: 100%;
+       padding: 10px;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+       font-size: 1rem;
+       margin-bottom: 1rem;
+
+       &:focus {
+         outline: none;
+         border-color: #007bff;
+         box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+       }
+   }
+
+  .error-message {
+    color: red;
+    font-size: 0.875rem; // Slightly smaller font size
+    margin-top: 5px;
+  }
+  button[type="submit"] {
+   background-color: #007bff;
+   color: white;
+   border: none;
+   padding: 10px 15px;
+   border-radius: 5px;
+   cursor: pointer;
+   }
+}

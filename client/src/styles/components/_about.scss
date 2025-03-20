@@ -1,0 +1,15 @@
+.team-members {
+    display: flex; // Simple horizontal layout for team members
+    flex-wrap: wrap; // Allow wrapping on smaller screens
+    justify-content: space-around; // Space out team members
+ 
+    .team-member {
+      width: 30%; // Adjust as needed for your layout
+      margin-bottom: 20px;
+      text-align: center; // Center-align team member content
+ 
+      h3 {
+        margin-bottom: 5px;
+      }
+    }
+  }

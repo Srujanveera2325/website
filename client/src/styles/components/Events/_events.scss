@@ -1,0 +1,105 @@
+// client/src/styles/components/Events/events.scss
+// Assuming you have variables defined in _variables.scss (imported in main.scss)
+@import '../../variables'; // Import variables
+
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; // Remove default margin
+
+    .event-item {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 20px;
+        margin-bottom: 20px;       // Space between event items
+        display: flex;          // Use Flexbox for layout
+        flex-direction: column; // Stack image and details vertically
+        align-items: flex-start; // Align items to the start (left)
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+        &:hover {
+        transform: translateY(-5px); // Subtle lift on hover
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); //  shadow on hover
+        }
+
+        .event-image-container {
+        width: 100%;            //  width
+        margin-bottom: 15px;    // Space between image and text
+        text-align: center;     // Center the image
+        }
+
+        .event-image {
+        max-width: 100%;       // Image can't be wider than its container
+        height: auto;          // Maintain aspect ratio
+        display: block;         // Remove extra space below image
+        border-radius: 8px;    // Rounded corners
+        }
+
+        .event-details {
+        width: 100%;            // Take up remaining width
+        // padding-left: 20px;     // Space between image and details (only if horizontal)
+
+            h2 {
+                font-size: 1.4rem;    //  heading size
+                color: $primary-color; // Use your primary color
+                margin-top: 0;
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+
+            p {
+                color: $text-color;    // Use your text color
+                margin-bottom: 0.5rem;
+                line-height: 1.5;
+                text-align: justify;
+
+                strong {
+                display: block;        // Make "Date:" and "Location:" bold and on their own lines
+                margin-bottom: 0.25rem;
+                color: $text-color-light; // Slightly muted color for labels
+                }
+            }
+        }
+        .read-more-button {
+        background-color: $secondary-color; // Use your secondary color (e.g., gold)
+        color: white;
+        border: none;
+        padding: 8px 15px;  //  padding
+        font-size: 0.9rem; //  font size
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 0.5rem;
+        align-self: center;
+
+        &:hover {
+            background-color: darken($secondary-color, 10%);
+        }
+    }
+    }
+    @media (min-width: 768px) { // Horizontal layout on larger screens
+    .event-item {
+        flex-direction: row; // Image and details side-by-side
+        align-items: center; // Vertically center content
+
+        .event-image-container {
+        width: 40%;       // Adjust as needed
+        margin-bottom: 0;  // Remove bottom margin
+        margin-right: 20px; // Add space between image and details
+        }
+        .event-details{
+            text-align: start;
+        }
+    }
+  }
+}
+.container h1{ // Added styles to the events page heading
+    color: #005f73;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 3px solid #ee9b00;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}

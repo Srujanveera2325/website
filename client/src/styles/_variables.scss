@@ -1,0 +1,25 @@
+// client/src/styles/_variables.scss
+
+// --- Color Variables ---
+$primary-color: #005f73; // Deep Teal
+$secondary-color: #ee9b00; // Vibrant Gold
+$accent-color: #f8f9fa;   // Very Light Gray (off-white)
+$text-color: #343a40;
+$text-color-light: #495057;
+$white: #fff;
+$error-color: #dc3545;
+$border-color: #ddd;
+
+// --- Font Variables (Example) ---
+$font-family-primary: 'Poppins', sans-serif;
+
+// --- Spacing Variables (Example) ---
+$base-spacing: 1rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// --- Other Variables (Border Radius, Box Shadow, etc.) ---
+$border-radius: 8px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
